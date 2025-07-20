@@ -23,7 +23,7 @@ public class OrdersRepository {
 
     public List<Order> getAllOrders() {
         String sql = "SELECT * FROM netology.orders";
-        return jdbcTemplate.query(sql, (rs, rowNum)-> {
+        return jdbcTemplate.query(sql, (rs, rowNum) -> {
             Order order = new Order();
             order.setId(rs.getInt("id"));
             order.setDate(rs.getDate("date").toLocalDate());

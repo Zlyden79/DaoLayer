@@ -23,7 +23,7 @@ public class CustomersRepository {
 
     public List<Customer> getAllCustomers() {
         String sql = "SELECT * FROM netology.customers";
-        return jdbcTemplate.query(sql, (rs, rowNum)-> {
+        return jdbcTemplate.query(sql, (rs, rowNum) -> {
             Customer customer = new Customer();
             customer.setId(rs.getInt("id"));
             customer.setName(rs.getString("name"));
