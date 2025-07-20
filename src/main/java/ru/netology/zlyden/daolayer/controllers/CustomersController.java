@@ -12,13 +12,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/customers")
 public class CustomersController {
-    JdbcTemplate jdbcTemplate;
-    CustomersRepository customersRepository;
+    private final CustomersRepository customersRepository;
 
     @Autowired
-    public CustomersController(JdbcTemplate jdbcTemplate, CustomersRepository customersRepository) {
-        this.jdbcTemplate = jdbcTemplate;
-        this.customersRepository = customersRepository;
+    public CustomersController(CustomersRepository customersRepository) {
+            this.customersRepository = customersRepository;
     }
 
     @GetMapping

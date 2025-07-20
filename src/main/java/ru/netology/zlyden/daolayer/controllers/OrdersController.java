@@ -11,13 +11,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/orders")
 public class OrdersController {
-    JdbcTemplate jdbcTemplate;
-    OrdersRepository ordersRepository;
+    private final OrdersRepository ordersRepository;
 
     @Autowired
-    public OrdersController(JdbcTemplate jdbcTemplate, OrdersRepository ordersRepository) {
-        this.jdbcTemplate = jdbcTemplate;
-        this.ordersRepository = ordersRepository;
+    public OrdersController(OrdersRepository ordersRepository) {
+            this.ordersRepository = ordersRepository;
     }
 
     @GetMapping
